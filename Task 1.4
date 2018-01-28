@@ -1,0 +1,20 @@
+Module Module1
+
+    Sub Main()
+        Dim sName As String = ""
+        Dim MemberIDnum As Integer = 0
+
+        Console.WriteLine("Enter name of member:")
+        sName = Console.ReadLine
+
+        Console.WriteLine("Enter membership ID number")
+        MemberIDnum = Console.ReadLine
+
+        FileOpen(1, "c:\Membershipdata\MemberRec.txt", OpenMode.Append)
+
+        WriteLine(1, sName)
+        WriteLine(1, MemberIDnum)
+
+    End Sub
+
+End Module
