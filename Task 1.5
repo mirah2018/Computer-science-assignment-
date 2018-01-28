@@ -1,0 +1,34 @@
+Module Module1
+
+    Sub Main()
+        Dim sName As String
+        Dim MemberIDnum As Integer
+        Dim TelephoneNum As String
+        Dim MemDate As String
+        FileOpen(1, "c:\Membershipdata\MemberRec.txt", OpenMode.Input)
+
+        While Not EOF(1)
+
+            Input(1, sName)
+            Input(1, MemberIDnum)
+
+            Console.WriteLine("Please enter the telephone number and membership date of this member: " & sName)
+            TelephoneNum = Console.ReadLine
+            MemDate = Console.ReadLine
+
+            FileOpen(2, "c:\Membershipdata\temp.txt", OpenMode.Output)
+
+            WriteLine(2, sName)
+            WriteLine(2, MemberIDnum)
+            WriteLine(2, TelephoneNum)
+            WriteLine(2, MemDate)
+
+        End While
+        FileClose(1)
+        FileClose(2)
+        My.Computer.FileSystem.DeleteFile("c:\Membershipdata\MemberRec.txt")
+        My.Computer.FileSystem.RenameFile("c:\Membershipdata\temp.txt", "MemberRec.txt")
+
+    End Sub
+
+End Module
