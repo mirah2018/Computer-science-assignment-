@@ -1,0 +1,27 @@
+Module Module1
+
+    Sub Main()
+        Dim sName As String = ""
+        Dim MemberIDnum As Integer = 0
+
+        FileOpen(1, "c:\Membershipdata\MemberRec.txt", OpenMode.Input)
+
+        While Not EOF(1)
+
+            Input(1, sName)
+            Input(1, MemberIDnum)
+
+            Console.WriteLine("Member Name:" & sName)
+            Console.WriteLine("Membership ID Number:" & MemberIDnum)
+
+
+        End While
+        FileClose(1)
+        Console.ReadKey()
+
+
+
+
+    End Sub
+
+End Module
