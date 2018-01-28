@@ -1,0 +1,41 @@
+Module Module1
+
+    Sub Main()
+        Dim sName, searchN As String
+        Dim MemberIDnum As Integer = 0
+        Dim isfound As Boolean = False
+
+        Console.Write("Enter name to search for: ")
+        searchN = Console.ReadLine
+
+        FileOpen(1, "c:\Membershipdata\MemberRec.txt", OpenMode.Input)
+
+        While Not EOF(1)
+            Input(1, sName)
+            Input(1, MemberIDnum)
+
+            If sName = searchN Then
+                isfound = True
+
+                Console.WriteLine("Member Name:" & sName)
+                Console.WriteLine("Membership ID Number:" & MemberIDnum)
+
+
+
+            End If
+
+
+
+
+        End While
+        FileClose(1)
+        If isfound = False Then
+            Console.WriteLine("Record not found")
+        End If
+        Console.ReadKey()
+
+
+
+    End Sub
+
+End Module
